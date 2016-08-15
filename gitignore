@@ -1,0 +1,11 @@
+.DS_Store
+*.DS_Store
+.svn
+.env
+*~
+tags
+log/
+db/*.sqlite3
+.netrwhist
+project-notes.txt
+.bundle
