@@ -132,4 +132,4 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-colorscheme  monokai
+colorscheme jellybeans
