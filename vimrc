@@ -12,6 +12,8 @@ set expandtab
 set cursorline
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 set cindent
 
 hi Search guibg=LightBlue
@@ -26,14 +28,15 @@ nnoremap <leader>v :vsp<Enter>
 nnoremap <leader>h :sp<Enter>
 nnoremap <leader>q :q<Enter>
 nnoremap <leader>s :w<Enter>
+nnoremap <leader>, <C-^>
 
+nnoremap <leader>c "*
 nnoremap <leader><Right> <c-w>l
 nnoremap <leader><Left> <c-w>h
 nnoremap <leader><Up> <c-w>k
 nnoremap <leader><Down> <c-w>j
 nnoremap <leader>[ <c-T>
 nnoremap <leader>] <c-]>
-nnoremap <leader>o <c-o>
 nnoremap <leader>o <c-o>
 nnoremap <S-Enter> O<Esc>
 nnoremap <CR> o<Esc>
@@ -71,6 +74,7 @@ Plug 'Konfekt/FastFold'               " Update folds on save
 Plug 'junegunn/fzf.vim'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-surround'
+Plug 'valloric/youcompleteme'
 Plug 'itchyny/lightline.vim'          " Status bar
 Plug 'simnalamburt/vim-mundo'         " Undo browser (replaces gundo)
 Plug 'danro/rename.vim'
