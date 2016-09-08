@@ -18,6 +18,7 @@ set cindent
 
 hi Search guibg=LightBlue
 filetype plugin indent on
+filetype plugin on
 
 let mapleader = " " 
 
@@ -60,9 +61,14 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-"Plugins
 
+"Stuff required by rubyblock
+runtime macros/matchit.vim
+
+"Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim.git'
 Plug 'kchmck/vim-coffee-script'
 Plug 'flazz/vim-colorschemes'
