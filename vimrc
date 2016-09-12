@@ -24,6 +24,7 @@ let mapleader = " "
 
 nnoremap <leader>p :Ag<Enter>
 nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>t :CtrlPTag<cr>
 nnoremap <silent> <M-h> <C-w>h
 nnoremap <leader>v :vsp<Enter>
 nnoremap <leader>h :sp<Enter>
