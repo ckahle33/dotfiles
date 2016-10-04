@@ -1,11 +1,19 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+*.swp
+config/rfm.yml
 .DS_Store
-*.DS_Store
-.svn
 .env
-*~
+.foreman
+Notes
+config/local_env.yml
+config/database.yml
 tags
-log/
-db/*.sqlite3
-.netrwhist
-project-notes.txt
-.bundle
