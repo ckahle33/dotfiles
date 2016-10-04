@@ -9,6 +9,7 @@ ZSH_THEME="agnoster"
 
 eval `docker-machine env 2>/dev/null`
 
+export PATH=/usr/local/share/npm/lib/node_modules/grunt-cli/bin:$PATH
 # source /usr/local/opt/chruby/share/chruby/auto.sh
 # source /usr/local/share/chruby/chruby.sh
 # chruby ruby-2.2.5

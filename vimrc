@@ -19,11 +19,12 @@ set cindent
 hi Search guibg=LightBlue
 filetype plugin indent on
 filetype plugin on
+autocmd BufWritePre * :%s/\s\+$//e
 
-let mapleader = " " 
+let mapleader = " "
 
-nnoremap <leader>p :Ag<Enter>
-nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>f :Ag<Enter>
+nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
 nnoremap <silent> <M-h> <C-w>h
 nnoremap <leader>v :vsp<Enter>
@@ -68,6 +69,7 @@ runtime macros/matchit.vim
 
 "Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'isruslan/vim-es6'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim.git'
