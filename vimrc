@@ -10,7 +10,6 @@ set smartindent
 set backspace=indent,eol,start
 set expandtab
 set cursorline
-set hlsearch
 set incsearch
 set ignorecase
 set smartcase
@@ -23,14 +22,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 let mapleader = " "
 
-nnoremap <leader>f :Ag<Enter>
+nnoremap <leader>f :Ag<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
-nnoremap <silent> <M-h> <C-w>h
-nnoremap <leader>v :vsp<Enter>
-nnoremap <leader>h :sp<Enter>
-nnoremap <leader>q :q<Enter>
-nnoremap <leader>s :w<Enter>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>h :sp<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
 nnoremap <leader>, <C-^>
 
 nnoremap <leader>c "*
@@ -41,12 +39,12 @@ nnoremap <leader><Down> <c-w>j
 nnoremap <leader>[ <c-T>
 nnoremap <leader>] <c-]>
 nnoremap <leader>o <c-o>
-nnoremap <S-Enter> O<Esc>
 nnoremap <CR> o<Esc>
-snoremap<c-w><Right> <c-w>l
-nnoremap<c-w><Left> <c-w>h
-nnoremap<c-w><Up> <c-w>k
-nnoremap<c-w><Down> <c-w>j
+
+let g:gitgutter_map_keys = 0
+
+" Turn off gitgutter key mappings
+
 " Magic sauce that makes nerdtree perform like a typical explorer
 " Open files as normal in NerdTree with 'o' or Enter and a persistent
 " NerdTree instance remains, press <leader>d to re-open
@@ -75,8 +73,11 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim.git'
 Plug 'kchmck/vim-coffee-script'
 Plug 'flazz/vim-colorschemes'
-Plug 'airblade/vim-gitgutter'
+
+" -- Git -
+Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
+
 Plug 'junegunn/vim-easy-align'
 Plug 'ctrlpvim/ctrlp.vim'             " File finder
 Plug 'Konfekt/FastFold'               " Update folds on save
@@ -99,6 +100,7 @@ Plug 'Shougo/vimproc',               { 'do': 'make' }
 Plug 'dbakker/vim-projectroot'
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test'
@@ -106,24 +108,9 @@ Plug 'janko-m/vim-test'
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 
-" Elm
-Plug 'ElmCast/elm-vim'
-
-" Crystal
-Plug 'rhysd/vim-crystal'
-
 " Go
 Plug 'fatih/vim-go',                 { 'for': 'go' }
 Plug 'rhysd/vim-go-impl',            { 'for': 'go' }
-
-" Haskell
-Plug 'neovimhaskell/haskell-vim',     {'for': 'haskell'}
-Plug 'bitc/vim-hdevtools',            {'for': 'haskell'}
-" Plug 'enomsg/vim-haskellConcealPlus', {'for': 'haskell'}
-Plug 'eagletmt/ghcmod-vim',           {'for': 'haskell'}
-Plug 'eagletmt/neco-ghc'
-Plug 'Twinside/vim-hoogle',           {'for': 'haskell'}
-
 
   " Javascript
 Plug 'kchmck/vim-coffee-script',     { 'for': 'coffee' }
