@@ -1,4 +1,7 @@
 syntax on
+set t_Co=256
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 set nocp
 set mouse=a
@@ -139,5 +142,3 @@ Plug 'slim-template/vim-slim'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
-
-colorscheme jellybeans
