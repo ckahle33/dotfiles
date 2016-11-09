@@ -1,4 +1,5 @@
 syntax on
+
 set nocp
 set mouse=a
 set splitright
@@ -14,6 +15,8 @@ set incsearch
 set ignorecase
 set smartcase
 set cindent
+set clipboard=unnamed
+set statusline+=%F
 
 hi Search guibg=LightBlue
 filetype plugin indent on
@@ -22,24 +25,28 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 let mapleader = " "
 
-nnoremap <leader>f :Ag<cr>
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>t :CtrlPTag<cr>
-nnoremap <leader>v :vsp<cr>
-nnoremap <leader>h :sp<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader>, <C-^>
+nmap U <c-r>
+nmap Y y$
 
-nnoremap <leader>c "*
-nnoremap <leader><Right> <c-w>l
-nnoremap <leader><Left> <c-w>h
-nnoremap <leader><Up> <c-w>k
-nnoremap <leader><Down> <c-w>j
-nnoremap <leader>[ <c-T>
-nnoremap <leader>] <c-]>
-nnoremap <leader>o <c-o>
-nnoremap <CR> o<Esc>
+nmap <leader>f :Ag<cr>
+nmap <leader>p :CtrlP<cr>
+nmap <leader>t :CtrlPTag<cr>
+nmap <leader>v :vsp<cr>
+nmap <leader>h :sp<cr>
+nmap <leader>q :q<cr>
+nmap <leader>w :w<cr>
+nmap <leader>, <C-^>
+
+nmap <leader>c "*
+nmap <leader><Right> <c-w>l
+nmap <leader><Left> <c-w>h
+nmap <leader><Up> <c-w>k
+nmap <leader><Down> <c-w>j
+nmap <leader>[ <c-T>
+nmap <leader>] <c-]>
+nmap <leader>o <c-o>
+nmap <CR> o<Esc>
+
 
 let g:gitgutter_map_keys = 0
 
@@ -69,6 +76,7 @@ runtime macros/matchit.vim
 call plug#begin('~/.vim/plugged')
 Plug 'isruslan/vim-es6'
 Plug 'kana/vim-textobj-user'
+Plug 'tpope/vim-commentary'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim.git'
 Plug 'kchmck/vim-coffee-script'
