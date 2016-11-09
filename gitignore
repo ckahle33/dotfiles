@@ -16,4 +16,4 @@ config/rfm.yml
 Notes
 config/local_env.yml
 config/database.yml
-tags
+/tags
