@@ -28,28 +28,28 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 let mapleader = " "
 
+" hardmode engage
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 nmap U <c-r>
 nmap Y y$
 
-nmap <leader>f :Ag<cr>
-nmap <leader>p :CtrlP<cr>
-nmap <leader>t :CtrlPTag<cr>
-nmap <leader>v :vsp<cr>
-nmap <leader>h :sp<cr>
-nmap <leader>q :q<cr>
-nmap <leader>w :w<cr>
-nmap <leader>, <C-^>
+nnoremap <leader>f :Ag<cr>
+nnoremap <leader>p :CtrlP<cr>
+nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>h :sp<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>, <C-^>
 
-nmap <leader>c "*
-nmap <leader><Right> <c-w>l
-nmap <leader><Left> <c-w>h
-nmap <leader><Up> <c-w>k
-nmap <leader><Down> <c-w>j
-nmap <leader>[ <c-T>
-nmap <leader>] <c-]>
-nmap <leader>o <c-o>
-nmap <CR> o<Esc>
-
+nnoremap <leader>[ <c-T>
+nnoremap <leader>] <c-]>
+nnoremap <leader>o <c-o>
+nnoremap <CR> o<Esc>
 
 let g:gitgutter_map_keys = 0
 
