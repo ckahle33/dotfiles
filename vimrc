@@ -37,6 +37,12 @@ noremap <Right> <NOP>
 nmap U <c-r>
 nmap Y y$
 
+" tabs
+noremap <S-l> gt
+noremap <S-h> gT
+noremap <S-t> :tabnew<cr>
+noremap <S-q> :tabc<cr>
+
 nnoremap <leader>f :Ag<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
@@ -51,9 +57,8 @@ nnoremap <leader>] <c-]>
 nnoremap <leader>o <c-o>
 nnoremap <CR> o<Esc>
 
-let g:gitgutter_map_keys = 0
-
 " Turn off gitgutter key mappings
+let g:gitgutter_map_keys = 0
 
 " Magic sauce that makes nerdtree perform like a typical explorer
 " Open files as normal in NerdTree with 'o' or Enter and a persistent
