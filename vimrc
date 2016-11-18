@@ -1,6 +1,6 @@
 syntax on
 set t_Co=256
-hi CursorLine ctermbg=8 ctermfg=15 "8 = dark gray, 15 = white
+hi CursorLine ctermbg=Magenta
 hi Cursor ctermbg=15 ctermfg=8
 
 set nocp
@@ -147,3 +147,4 @@ Plug 'slim-template/vim-slim'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
+color molokai
