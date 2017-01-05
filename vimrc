@@ -100,7 +100,6 @@ Plug 'Konfekt/FastFold'               " Update folds on save
 Plug 'junegunn/fzf.vim'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-surround'
-Plug 'valloric/youcompleteme'
 Plug 'itchyny/lightline.vim'          " Status bar
 Plug 'simnalamburt/vim-mundo'         " Undo browser (replaces gundo)
 Plug 'danro/rename.vim'
