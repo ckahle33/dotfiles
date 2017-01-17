@@ -37,6 +37,10 @@ noremap <Right> <NOP>
 nmap U <c-r>
 nmap Y y$
 
+" treat wraps as lines
+nmap k gk
+nmap j gj
+
 " tabs
 noremap <S-l> gt
 noremap <S-h> gT
@@ -109,7 +113,6 @@ Plug 'tomtom/tlib_vim'
 Plug 'cespare/vim-toml'
 Plug 'scrooloose/nerdTree'
 Plug 'sickill/vim-monokai'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'nono/vim-handlebars',          { 'for': 'handlebars.html' }
 Plug 'Shougo/vimproc',               { 'do': 'make' }
 Plug 'dbakker/vim-projectroot'
