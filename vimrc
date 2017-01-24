@@ -7,6 +7,7 @@ set nocp
 set mouse=a
 set splitright
 set number
+set paste
 set rtp+=/usr/local/opt/fzf
 set tabstop=2
 set autoindent noexpandtab tabstop=2 shiftwidth=2
@@ -50,11 +51,16 @@ noremap <S-q> :tabc<cr>
 nnoremap <leader>f :Ag<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
-nnoremap <leader>v :vsp<cr>
-nnoremap <leader>h :sp<cr>
+nnoremap <leader>v :vnew<cr>
+nnoremap <leader>s :sp<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>, <C-^>
+nnoremap <leader>ra :%s/
+
+" Emacs-like beginning and end of line.
+nnoremap <c-e> $
+nnoremap <c-a> ^
 
 nnoremap <leader>[ <c-T>
 nnoremap <leader>] <c-]>
@@ -107,7 +113,7 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'          " Status bar
 Plug 'simnalamburt/vim-mundo'         " Undo browser (replaces gundo)
 Plug 'danro/rename.vim'
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/'
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tlib_vim'
 Plug 'cespare/vim-toml'
@@ -140,7 +146,6 @@ Plug 'Keithbsmiley/rspec.vim'
 Plug 'tpope/vim-rails'
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ruby/vim-ruby'
-" Plug 'skwp/vim-ruby-conque'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'slim-template/vim-slim'
