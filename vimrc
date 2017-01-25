@@ -121,6 +121,7 @@ Plug 'scrooloose/nerdTree'
 Plug 'sickill/vim-monokai'
 Plug 'nono/vim-handlebars',          { 'for': 'handlebars.html' }
 Plug 'Shougo/vimproc',               { 'do': 'make' }
+Plug 'tpope/vim-haml'
 Plug 'dbakker/vim-projectroot'
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
@@ -128,7 +129,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test'
-
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 
