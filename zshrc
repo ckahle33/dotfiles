@@ -14,6 +14,11 @@ export PATH=/usr/local/share/npm/lib/node_modules/grunt-cli/bin:$PATH
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 
+export FZF_DEFAULT_OPTS='
+  --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
+  --color info:144,prompt:161,spinner:135,pointer:135,marker:118
+'
+
 # source /usr/local/opt/chruby/share/chruby/auto.sh
 # source /usr/local/share/chruby/chruby.sh
 # chruby ruby-2.2.5
