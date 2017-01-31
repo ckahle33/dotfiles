@@ -1,7 +1,11 @@
+set t_Co=256 " 256 colors
 syntax on
-set t_Co=256
-hi CursorLine ctermbg=Magenta
 hi Cursor ctermbg=15 ctermfg=8
+
+let g:jellybeans_background_color = "000000"
+let g:jellybeans_background_color_256='NONE'
+
+colorscheme jellybeans
 
 set nocp
 set mouse=a
@@ -94,7 +98,7 @@ Plug 'tpope/vim-commentary'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim.git'
 Plug 'kchmck/vim-coffee-script'
-Plug 'flazz/vim-colorschemes'
+Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
 
 " -- Git -
 Plug 'tpope/vim-fugitive'
@@ -149,4 +153,3 @@ Plug 'slim-template/vim-slim'
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
-color molokai
