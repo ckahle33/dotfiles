@@ -58,10 +58,6 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>, <C-^>
 nnoremap <leader>ra :%s/
 
-" Emacs-like beginning and end of line.
-nnoremap <c-e> $
-nnoremap <c-a> ^
-
 nnoremap <leader>[ <c-T>
 nnoremap <leader>] <c-]>
 nnoremap <leader>o <c-o>
@@ -113,7 +109,6 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'          " Status bar
 Plug 'simnalamburt/vim-mundo'         " Undo browser (replaces gundo)
 Plug 'danro/rename.vim'
-Plug 'godlygeek/'
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tlib_vim'
 Plug 'cespare/vim-toml'
