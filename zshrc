@@ -19,6 +19,12 @@ export FZF_DEFAULT_OPTS='
   --color info:144,prompt:161,spinner:135,pointer:135,marker:118
 '
 
+if [[ $TERM_PROGRAM == iTerm.app ]];then
+    export TERM=xterm-256color
+else
+    export TERM=xterm-color
+fi
+
 # source /usr/local/opt/chruby/share/chruby/auto.sh
 # source /usr/local/share/chruby/chruby.sh
 # chruby ruby-2.2.5
