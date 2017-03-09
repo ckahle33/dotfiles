@@ -11,11 +11,8 @@ set nocp
 set mouse=a
 set splitright
 set number
-set paste
 set rtp+=/usr/local/opt/fzf
 set tabstop=2
-set autoindent noexpandtab tabstop=2 shiftwidth=2
-set smartindent
 set backspace=indent,eol,start
 set expandtab
 set cursorline
@@ -26,12 +23,19 @@ set cindent
 set clipboard=unnamed
 set statusline+=%F
 
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 hi Search guibg=LightBlue
 filetype plugin indent on
 filetype plugin on
 autocmd BufWritePre * :%s/\s\+$//e
 
 let mapleader = " "
+
+" indenting
+set ai " Automatically set the indent of a new line (local to buffer)
+set si " smartindent  (local to buffer)
+set pastetoggle=<f3>
 
 " hardmode engage
 noremap <Up> <NOP>
