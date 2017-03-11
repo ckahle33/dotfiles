@@ -12,7 +12,6 @@ set mouse=a
 set splitright
 set number
 set rtp+=/usr/local/opt/fzf
-set tabstop=2
 set backspace=indent,eol,start
 set expandtab
 set cursorline
@@ -22,6 +21,9 @@ set smartcase
 set cindent
 set clipboard=unnamed
 set statusline+=%F
+
+set shiftwidth=2
+set tabstop=2
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
