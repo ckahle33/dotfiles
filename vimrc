@@ -40,10 +40,10 @@ set si " smartindent  (local to buffer)
 set pastetoggle=<f3>
 
 " hardmode engage
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+" noremap <Up> <NOP>
+" noremap <Down> <NOP>
+" noremap <Left> <NOP>
+" noremap <Right> <NOP>
 
 nmap U <c-r>
 nmap Y y$
@@ -58,15 +58,19 @@ noremap <S-h> gT
 noremap <S-t> :tabnew<cr>
 noremap <S-q> :tabc<cr>
 
+" splits
 nnoremap <leader>f :Ag!<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
-nnoremap <leader>v :vnew<cr>
+nnoremap <leader>v :vsp<cr>
 nnoremap <leader>s :sp<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>, <C-^>
 nnoremap <leader>ra :%s/
+
+nnoremap - <c-w>>
+nnoremap + <c-w><
 
 nnoremap <leader>[ <c-T>
 nnoremap <leader>] <c-]>
