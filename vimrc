@@ -69,8 +69,8 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>, <C-^>
 nnoremap <leader>ra :%s/
 
-nnoremap - <c-w>>
-nnoremap + <c-w><
+nnoremap - <c-w><
+nnoremap = <c-w>>
 
 nnoremap <leader>[ <c-T>
 nnoremap <leader>] <c-]>
