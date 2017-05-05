@@ -2,17 +2,17 @@
 " set t_Co=256 " 256 colors
 
 " jellybeans
-" syntax enable
-" hi Cursor ctermbg=15 ctermfg=8
-" let g:jellybeans_background_color = "000000"
-" let g:jellybeans_background_color_256='NONE'
-" colorscheme jellybeans
+syntax enable
+hi Cursor ctermbg=15 ctermfg=8
+let g:jellybeans_background_color = "000000"
+let g:jellybeans_background_color_256='NONE'
+colorscheme jellybeans
 
 " monokai
-syntax enable
-colorscheme monokai
-hi Normal ctermbg=none
-highlight NonText ctermbg=none
+" syntax enable
+" colorscheme monokai
+" hi Normal ctermbg=none
+" highlight NonText ctermbg=none
 
 " solarized
 " syntax enable
