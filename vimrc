@@ -1,11 +1,27 @@
-set t_Co=256 " 256 colors
-syntax on
-hi Cursor ctermbg=15 ctermfg=8
+" colors
+" set t_Co=256 " 256 colors
 
-let g:jellybeans_background_color = "000000"
-let g:jellybeans_background_color_256='NONE'
+" jellybeans
+" syntax enable
+" hi Cursor ctermbg=15 ctermfg=8
+" let g:jellybeans_background_color = "000000"
+" let g:jellybeans_background_color_256='NONE'
+" colorscheme jellybeans
 
-colorscheme jellybeans
+" monokai
+syntax enable
+colorscheme monokai
+hi Normal ctermbg=none
+highlight NonText ctermbg=none
+
+" solarized
+" syntax enable
+" set background=dark
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" colorscheme solarized
+" set guifont=Inconsolata:h15
+" set guioptions-=L
 
 set nocp
 set mouse=a
@@ -21,6 +37,8 @@ set smartcase
 set cindent
 set clipboard=unnamed
 set statusline+=%F
+
+set noswapfile
 
 set shiftwidth=2
 set tabstop=2
@@ -78,13 +96,13 @@ nnoremap <leader>o <c-o>
 nnoremap <CR> o<Esc>
 
 " Turn off gitgutter key mappings
-let g:gitgutter_map_keys = 0
+let g:git8gutter_map_keys = 0
 
 " Magic sauce that makes nerdtree perform like a typical explorer
-" Open files as normal in NerdTree with 'o' or Enter and a persistent
+" Open fil[Ma9es as normal in NerdTree with 'o' or Enter and a persistent
 " NerdTree instance remains, press <leader>d to re-open
 let NERDTreeQuitOnOpen = 0
-nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>:NERDTreeToggle<CR>
+nnoremap <Lead[Ma9es9er>d :let NERDTreeQuitOnOpen = 1<bar>:NERDTreeToggle<CR>
 nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>:NERDTreeToggle<CR>
 
 let g:ctrlp_show_hidden = 1
@@ -109,6 +127,9 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'slim-template/vim-slim.git'
 Plug 'kchmck/vim-coffee-script'
 Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
+Plug 'tomasr/molokai'
+Plug 'sickill/vim-monokai'
+Plug 'altercation/vim-colors-solarized'
 
 " -- Git -
 Plug 'tpope/vim-fugitive'
@@ -145,7 +166,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go',                 { 'for': 'go' }
 Plug 'rhysd/vim-go-impl',            { 'for': 'go' }
 
-  " Javascript
+" Javascript
 Plug 'kchmck/vim-coffee-script',     { 'for': 'coffee' }
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-jdaddy'
