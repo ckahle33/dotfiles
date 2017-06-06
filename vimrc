@@ -1,4 +1,5 @@
 " colors
+"
 " set t_Co=256 " 256 colors
 
 " jellybeans
@@ -103,7 +104,7 @@ let g:git8gutter_map_keys = 0
 " NerdTree instance remains, press <leader>d to re-open
 let NERDTreeQuitOnOpen = 0
 nnoremap <Lead[Ma9es9er>d :let NERDTreeQuitOnOpen = 1<bar>:NERDTreeToggle<CR>
-nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>:NERDTreeToggle<CR>
+nnoremap <Leader>d :let NERDTreeQuitOnOpen = 0<bar>:NERDTreeToggle<CR>
 
 let g:ctrlp_show_hidden = 1
 let NERDTreeShowHidden=1
