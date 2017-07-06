@@ -141,6 +141,7 @@ Plug 'ctrlpvim/ctrlp.vim'             " File finder
 Plug 'Konfekt/FastFold'               " Update folds on save
 Plug 'junegunn/fzf.vim'
 Plug 'othree/html5.vim'
+Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'          " Status bar
 Plug 'simnalamburt/vim-mundo'         " Undo browser (replaces gundo)
