@@ -95,3 +95,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls='ls -lah'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
