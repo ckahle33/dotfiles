@@ -9,7 +9,7 @@ ZSH_THEME="robbyrussell"
 
 eval `docker-machine env 2>/dev/null`
 
-export PATH=/usr/local/share/npm/lib/node_modules/grunt-cli/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
@@ -94,5 +94,4 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 
 alias ls='ls -lah'
-export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
