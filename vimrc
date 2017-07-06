@@ -63,7 +63,7 @@ noremap <S-t> :tabnew<cr>
 noremap <S-q> :tabc<cr>
 
 " splits
-nnoremap <leader>f :Ag!<cr>
+nnoremap <leader>f :FZF!<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
 nnoremap <leader>v :vsp<cr>
