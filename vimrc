@@ -62,10 +62,12 @@ noremap <S-h> gT
 noremap <S-t> :tabnew<cr>
 noremap <S-q> :tabc<cr>
 
-" splits
-nnoremap <leader>f :FZF!<cr>
+" search
+nnoremap <leader>f :Ag<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
+
+" splits
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>s :sp<cr>
 nnoremap <leader>q :q<cr>
