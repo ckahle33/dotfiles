@@ -9,21 +9,6 @@ let g:jellybeans_background_color = "000000"
 let g:jellybeans_background_color_256='NONE'
 colorscheme jellybeans
 
-" monokai
-" syntax enable
-" colorscheme monokai
-" hi Normal ctermbg=none
-" highlight NonText ctermbg=none
-
-" solarized
-" syntax enable
-" set background=dark
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" colorscheme solarized
-" set guifont=Inconsolata:h15
-" set guioptions-=L
-
 set nocp
 set mouse=a
 set splitright
@@ -139,6 +124,7 @@ Plug 'bling/vim-airline'
 Plug 'junegunn/vim-easy-align'
 Plug 'ctrlpvim/ctrlp.vim'             " File finder
 Plug 'Konfekt/FastFold'               " Update folds on save
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'othree/html5.vim'
 Plug 'alvan/vim-closetag'
