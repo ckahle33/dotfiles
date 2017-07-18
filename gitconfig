@@ -32,3 +32,5 @@
   merged = !git branch --merged | egrep -v \"\\*|^\\s+develop$|^\\s+master$\"
   merged-cleanup = !git merged | xargs -n 1 git branch -d
   aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+[format]
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
