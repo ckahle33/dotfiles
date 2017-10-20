@@ -1,13 +1,11 @@
-" colors
-"
-" set t_Co=256 " 256 colors
-
 " jellybeans
 syntax enable
-hi Cursor ctermbg=15 ctermfg=8
-let g:jellybeans_background_color = "000000"
-let g:jellybeans_background_color_256='NONE'
 colorscheme jellybeans
+
+" solarized
+" syntax enable
+" set background=dark
+" colorscheme solarized
 
 set nocp
 set mouse=a
@@ -32,8 +30,8 @@ set tabstop=2
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 hi Search guibg=LightBlue
-filetype plugin indent on
 filetype plugin on
+syntax on
 autocmd BufWritePre * :%s/\s\+$//e
 
 let mapleader = " "
@@ -42,12 +40,6 @@ let mapleader = " "
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent  (local to buffer)
 set pastetoggle=<f3>
-
-" hardmode engage
-" noremap <Up> <NOP>
-" noremap <Down> <NOP>
-" noremap <Left> <NOP>
-" noremap <Right> <NOP>
 
 nmap U <c-r>
 nmap Y y$
@@ -64,8 +56,8 @@ noremap <S-q> :tabc<cr>
 
 " search
 nnoremap <leader>f :Ag<cr>
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>p :Files<cr>
+nnoremap <leader>t :Tags<cr>
 
 " splits
 nnoremap <leader>v :vsp<cr>
@@ -85,6 +77,9 @@ nnoremap <CR> o<Esc>
 
 " Turn off gitgutter key mappings
 let g:git8gutter_map_keys = 0
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
 
 " Magic sauce that makes nerdtree perform like a typical explorer
 " Open fil[Ma9es as normal in NerdTree with 'o' or Enter and a persistent
@@ -108,23 +103,18 @@ runtime macros/matchit.vim
 
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'isruslan/vim-es6'
-Plug 'kana/vim-textobj-user'
-Plug 'tpope/vim-commentary'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'slim-template/vim-slim.git'
-Plug 'kchmck/vim-coffee-script'
+
+" Colors
 Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
-Plug 'tomasr/molokai'
-Plug 'sickill/vim-monokai'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
 
 " -- Git -
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 
+" Util
 Plug 'junegunn/vim-easy-align'
-Plug 'ctrlpvim/ctrlp.vim'             " File finder
 Plug 'Konfekt/FastFold'               " Update folds on save
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -132,11 +122,9 @@ Plug 'othree/html5.vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'          " Status bar
-Plug 'simnalamburt/vim-mundo'         " Undo browser (replaces gundo)
+Plug 'sjl/gundo.vim'
 Plug 'danro/rename.vim'
 Plug 'majutsushi/tagbar'
-Plug 'tomtom/tlib_vim'
-Plug 'cespare/vim-toml'
 Plug 'scrooloose/nerdTree'
 Plug 'sickill/vim-monokai'
 Plug 'nono/vim-handlebars',          { 'for': 'handlebars.html' }
@@ -146,9 +134,10 @@ Plug 'dbakker/vim-projectroot'
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
-
 Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test'
+Plug 'valloric/youcompleteme'
+
 " Elixir
 Plug 'elixir-lang/vim-elixir'
 
@@ -158,6 +147,7 @@ Plug 'rhysd/vim-go-impl',            { 'for': 'go' }
 
 " Javascript
 Plug 'kchmck/vim-coffee-script',     { 'for': 'coffee' }
+Plug 'isruslan/vim-es6'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-jdaddy'
 
@@ -170,7 +160,10 @@ Plug 'sunaku/vim-ruby-minitest'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'slim-template/vim-slim'
 
-" Rust
-Plug 'rust-lang/rust.vim'
+" Misc
+Plug 'kana/vim-textobj-user'
+Plug 'tpope/vim-commentary'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
 
 call plug#end()
