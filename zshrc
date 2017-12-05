@@ -9,7 +9,7 @@ ZSH_THEME="robbyrussell"
 
 eval `docker-machine env 2>/dev/null`
 
-export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=$PATH:/usr/local/share/npm/bin
 
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
@@ -94,6 +94,5 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 
 alias ls='ls -lah'
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
