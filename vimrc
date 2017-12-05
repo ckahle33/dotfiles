@@ -64,8 +64,8 @@ noremap <S-q> :tabc<cr>
 
 " search
 nnoremap <leader>f :Ag<cr>
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>p :Files<cr>
+nnoremap <leader>t :Tags<cr>
 
 " splits
 nnoremap <leader>v :vsp<cr>
