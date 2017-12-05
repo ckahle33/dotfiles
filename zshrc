@@ -21,10 +21,10 @@ export FZF_DEFAULT_OPTS='
 
 export TERM=screen-256color
 
-# source /usr/local/opt/chruby/share/chruby/auto.sh
-#
+source /usr/local/share/chruby/auto.sh
 source /usr/local/share/chruby/chruby.sh
-# chruby ruby-2.2.5
+chruby ruby-2.4.0
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
