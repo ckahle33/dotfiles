@@ -9,7 +9,7 @@ ZSH_THEME="robbyrussell"
 
 eval `docker-machine env 2>/dev/null`
 
-export PATH=$PATH:/usr/local/share/npm/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:/usr/local/share/npm/bin
 
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
@@ -21,9 +21,10 @@ export FZF_DEFAULT_OPTS='
 
 export TERM=screen-256color
 
-# source /usr/local/opt/chruby/share/chruby/auto.sh
-# source /usr/local/share/chruby/chruby.sh
-# chruby ruby-2.2.5
+source /usr/local/share/chruby/auto.sh
+source /usr/local/share/chruby/chruby.sh
+chruby ruby-2.4.0
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
