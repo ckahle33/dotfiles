@@ -94,6 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 
 alias ls='ls -lah'
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
