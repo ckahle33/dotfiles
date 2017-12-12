@@ -23,7 +23,7 @@ export TERM=screen-256color
 
 source /usr/local/share/chruby/auto.sh
 source /usr/local/share/chruby/chruby.sh
-chruby ruby-2.4.0
+chruby ruby-2.4.1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
