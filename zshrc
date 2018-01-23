@@ -8,9 +8,8 @@ ZSH_THEME="robbyrussell"
 # SPACESHIP_NODE_SHOW=(false)
 
 # chruby
-source /usr/local/share/chruby/auto.sh
 source /usr/local/share/chruby/chruby.sh
-chruby ruby-2.4.1
+source /usr/local/share/chruby/auto.sh
 
 # plugins
 plugins=(git)
