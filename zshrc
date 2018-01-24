@@ -1,3 +1,6 @@
+# export
+export ZSH=~/.oh-my-zsh
+
 # theming
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="robbyrussell"
