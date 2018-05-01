@@ -2,11 +2,6 @@
 syntax enable
 colorscheme jellybeans
 
-" solarized
-" syntax enable
-" set background=dark
-" colorscheme solarized
-
 set nocp
 set mouse=a
 set splitright
@@ -21,6 +16,7 @@ set smartcase
 set cindent
 set clipboard=unnamed
 set statusline+=%F
+set re=1
 
 set noswapfile
 
