@@ -133,6 +133,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test'
 Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-repeat'
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'

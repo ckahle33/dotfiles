@@ -40,3 +40,5 @@ eval `docker-machine env 2>/dev/null`
 
 # init!
 source $ZSH/oh-my-zsh.sh
+
+export EDITOR=vim
