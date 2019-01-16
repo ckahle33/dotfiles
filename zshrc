@@ -42,3 +42,5 @@ eval `docker-machine env 2>/dev/null`
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
+
+export GOPATH=${HOME}/Development/go
