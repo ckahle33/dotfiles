@@ -126,6 +126,7 @@ Plug 'sickill/vim-monokai'
 Plug 'nono/vim-handlebars',          { 'for': 'handlebars.html' }
 Plug 'Shougo/vimproc',               { 'do': 'make' }
 Plug 'tpope/vim-haml'
+Plug 'posva/vim-vue'
 Plug 'dbakker/vim-projectroot'
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
