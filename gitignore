@@ -1,19 +1,20 @@
-# Ignore bundler config.
-/.bundle
+# Global ignore: machine and editor noise only.
+# Anything project-shaped belongs in that project's own .gitignore.
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
-*.swp
-config/rfm.yml
+# macOS
 .DS_Store
+._*
+
+# Editors
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local env and scratch
 .env
-.foreman
+.env.local
 Notes
-config/local_env.yml
-config/database.yml
+tags
 /tags

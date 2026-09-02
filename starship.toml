@@ -1,0 +1,63 @@
+# Deliberately no Nerd Font glyphs -- every symbol here is either ASCII or a
+# common dingbat that Monaco already has. Terminal font stays Monaco 12.
+# Shape mirrors the old robbyrussell theme:  ➜  dir git:(branch) ✗
+
+add_newline = false
+format = "$character$directory$git_branch$git_status$kubernetes$gcloud$cmd_duration"
+
+[character]
+format = "$symbol  "
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[directory]
+format = "[$path]($style) "
+style = "cyan"
+truncation_length = 3
+truncate_to_repo = true
+
+# ( and ) are starship's conditional-group syntax, so the literal parens
+# of the git:(branch) shape must be backslash-escaped.
+[git_branch]
+format = "[git:\\(](bold blue)[$branch](bold red)[\\)](bold blue) "
+
+[git_status]
+# Outer ( ) is a conditional group: the trailing space only renders when
+# there is actually a status marker, so a clean repo gets no dangling gap.
+format = "([$all_status$ahead_behind]($style) )"
+style = "bold yellow"
+conflicted = "!"
+untracked = "?"
+modified = "✗"
+staged = "+"
+renamed = "»"
+deleted = "x"
+stashed = "≡"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕"
+
+# Your only context is a remote GKE cluster, so this is a safety rail, not
+# decoration -- it tells you what you are about to apply against.
+# The raw name is gke_<proj>_<region>_<cluster>; collapse it to gke/<cluster>.
+[kubernetes]
+disabled = false
+format = '[k8s:($context)]($style) '
+style = "bold red"
+
+[[kubernetes.contexts]]
+context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
+context_alias = "gke/$cluster"
+
+[[kubernetes.contexts]]
+context_pattern = "docker-desktop|minikube|kind-.*|orbstack"
+style = "dimmed green"
+
+[gcloud]
+format = '[gcp:($project)]($style) '
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style) "
+style = "dimmed white"

@@ -1,42 +1,79 @@
-export ZSH=~/.oh-my-zsh
+# ─────────────────────────────────────────────────────────────
+# PATH  (brew first, then dedupe -- $path is tied to $PATH)
+# ─────────────────────────────────────────────────────────────
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# theming
-# Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="robbyrussell"
+export GOPATH=$HOME/src/go
 
-# only if spaceship was fast
-# SPACESHIP_PROMPT_ADD_NEWLINE=(false)
-# SPACESHIP_PROMPT_SEPARATE_LINE=(false)
-# SPACESHIP_NODE_SHOW=(false)
+path=(
+  $HOME/.local/bin
+  $GOPATH/bin           # go install drops binaries here (gopls lives here)
+  /Applications/Postgres.app/Contents/Versions/latest/bin
+  $path
+)
+typeset -U path        # drop duplicates; also kills the trailing-":" cwd entry
 
-# plugins
-plugins=(git)
+export EDITOR=nvim
 
-autoload -U colors && colors
-PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+# ─────────────────────────────────────────────────────────────
+# HISTORY
+# ─────────────────────────────────────────────────────────────
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt SHARE_HISTORY          # all panes see the same history
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE      # leading space keeps a command out of history
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY            # expand !! for review instead of running it
+setopt EXTENDED_HISTORY
 
-export TERM=screen-256color
+# ─────────────────────────────────────────────────────────────
+# OPTIONS
+# ─────────────────────────────────────────────────────────────
+setopt AUTO_CD                # "src" == "cd src"
+setopt AUTO_PUSHD PUSHD_IGNORE_DUPS PUSHD_SILENT
+setopt INTERACTIVE_COMMENTS   # allow # comments when typing
+setopt NO_BEEP
 
-# path
-export PATH=$PATH:/usr/local/share/npm/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:$PATH
+# ─────────────────────────────────────────────────────────────
+# COMPLETION
+# ─────────────────────────────────────────────────────────────
+fpath=(/opt/homebrew/share/zsh-completions $fpath)
+autoload -Uz compinit && compinit -C
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # case-insensitive
+zstyle ':completion:*' group-name ''
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
-# fzf settings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='
-  --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
-  --color info:144,prompt:161,spinner:135,pointer:135,marker:118
-'
-
-# alias
+# ─────────────────────────────────────────────────────────────
+# ALIASES
+# oh-my-zsh supplied .. and ... -- they are ours now.
+# ─────────────────────────────────────────────────────────────
 alias ls='ls -lah'
+alias vim='nvim'
+alias vi='nvim'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
-# misc
-eval `docker-machine env 2>/dev/null`
+# ─────────────────────────────────────────────────────────────
+# KEYS
+# ─────────────────────────────────────────────────────────────
+bindkey -e
+bindkey "\e[1;3D" backward-word     # ⌥←
+bindkey "\e[1;3C" forward-word      # ⌥→
+bindkey "^[[1;9D" beginning-of-line # ⌘←
+bindkey "^[[1;9C" end-of-line       # ⌘→
 
-# init!
-source $ZSH/oh-my-zsh.sh
+# ─────────────────────────────────────────────────────────────
+# PLUGINS  (syntax-highlighting must be sourced last)
+# ─────────────────────────────────────────────────────────────
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export EDITOR=vim
-
-export GOPATH=${HOME}/src/go
-eval $(/opt/homebrew/bin/brew shellenv)
+# ─────────────────────────────────────────────────────────────
+# PROMPT
+# ─────────────────────────────────────────────────────────────
+export STARSHIP_CONFIG=~/.starship.toml
+eval "$(starship init zsh)"

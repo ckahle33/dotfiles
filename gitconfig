@@ -1,11 +1,11 @@
 [user]
-	name = "Craig Kahle"
+	name = ckahle
 	email = ckahle33@gmail.com
 [push]
   default = current
 [core]
   excludesfile = /Users/craigkahle/.gitignore
-	editor = /usr/local/bin/vim
+	editor = nvim
 [alias]
   st = status
   ci = commit
@@ -39,3 +39,6 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[gitreview]
+	remote = origin
+	username = craigkahle
