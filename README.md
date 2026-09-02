@@ -1,53 +1,34 @@
 # dotfiles
 
-    make install
+    ./install.sh install
 
-Symlinks everything into place — `zshrc` → `~/.zshrc`, and `nvim/` →
-`~/.config/nvim`. Existing files are never clobbered; `make force` replaces
-them, `make unlink` backs the whole thing out.
+Symlinks the configs into place, leaving anything already there alone.
 
-    make            list the targets
-    make install    link, skipping anything already in the way
-    make force      link, replacing whatever is in the way
-    make unlink     remove only the symlinks pointing back here
-    make deps       install the tools these configs assume
-    make list       show what install would manage
+    ./install.sh install    link, skipping anything already in the way
+    ./install.sh force      link, replacing whatever is in the way
+    ./install.sh unlink     remove only the symlinks pointing back here
+    ./install.sh deps       install the tools these configs assume
+    ./install.sh list       show what install would manage
 
-Plain `sh` and the `make` macOS ships. No runtime to install first — the
-Command Line Tools that `git clone` already needed are the only dependency.
+`--dry-run` prints what any of those would do without touching the disk.
+Plain bash, no runtime to install first — the Command Line Tools that
+`git clone` already needed are the only dependency.
 
 ## What's here
 
-| file            | notes |
-|-----------------|-------|
-| `nvim/init.lua` | **Zero plugins.** One file, no manager, no lockfile, nothing to update. |
-| `zshrc`         | No framework. Prompt is starship; autosuggestions + syntax highlighting from brew. |
-| `starship.toml` | Reached via `$STARSHIP_CONFIG` (set in `zshrc`), since starship otherwise wants `~/.config/`. |
-| `tmux.conf`     | Prefix is `C-a`. Tuned for watching several agent panes at once. |
-| `gitconfig`     | Aliases `st`/`ci`/`co` etc. |
-| `gitignore`     | Global ignore — machine and editor noise only. |
+| file            | links to           | notes |
+|-----------------|--------------------|-------|
+| `nvim/init.lua` | `~/.config/nvim`   | Zero plugins. Core LSP (`gopls`, `ts_ls`, `pyright`), built-in completion, `gc` commenting, `:Lexplore`, `:find`. |
+| `zshrc`         | `~/.zshrc`         | No framework. Prompt is starship; autosuggestions + syntax highlighting from brew. |
+| `starship.toml` | `~/.starship.toml` | Found via `$STARSHIP_CONFIG`, set in `zshrc`. Uses only characters plain Monaco has, so no Nerd Font is needed. |
+| `tmux.conf`     | `~/.tmux.conf`     | Prefix is `C-a`, status bar on top. Tuned for watching several agent panes at once. |
+| `gitconfig`     | `~/.gitconfig`     | Aliases `st`/`ci`/`co` etc. |
+| `gitignore`     | `~/.gitignore`     | Global ignore — machine and editor noise only. |
 
-## The no-plugin bet
+That mapping is an explicit list in `install.sh`, not a glob, so adding a file
+to this repo does not by itself turn it into a dotfile — add a row to `LINKS`.
+`install` and `unlink` only ever touch symlinks that point back here; a real
+file in the way is reported and left alone until you ask for `force`.
 
-Neovim 0.11+ absorbed most of what the old vim plugin list was doing:
-
-| was                        | now |
-|----------------------------|-----|
-| `vim-commentary`           | built-in `gc` / `gcc` (0.10+) |
-| `vim-go`, completion       | built-in LSP + `vim.lsp.completion` (0.11+) |
-| `vim-airline`              | native `statusline`, one line |
-| `nerdTree`                 | `:Lexplore` (netrw), `<leader>d` |
-| `fzf` / `ctrlp`            | `:find` with `path+=**`, `<leader>p` |
-| `gundo`                    | `undofile` (persistent undo) |
-| `vim-easy-align`           | visual select + `<leader>a` → `:!column -t` |
-| `FastFold`, syntax plugins | built-in filetype + treesitter |
-
-Knowingly given up: `fugitive` (git runs in the terminal), gutter git signs,
-and `vim-surround`. If any of those turn out to matter more than the zero
-maintenance, that is the moment to reconsider — not before.
-
-Language servers are ordinary binaries, not plugins: `gopls`, `ts_ls`,
-`pyright`. `make deps` installs them.
-
-No Nerd Font needed — `starship.toml` deliberately uses only characters that
-plain Monaco has.
+Language servers are ordinary binaries rather than plugins, so `deps` installs
+them alongside neovim, starship, tmux and ag.
