@@ -1,1 +1,5 @@
-./oh-my-zsh/custom/themes/*
+.DS_Store
+vim/plugged/
+vim/tmp/
+vim/.netrwhist
+vim/autoload/*.old
