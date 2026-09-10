@@ -3,7 +3,7 @@
 # Shape mirrors the old robbyrussell theme:  ➜  dir git:(branch) ✗
 
 add_newline = false
-format = "$character$directory$git_branch$git_status$kubernetes$gcloud$cmd_duration"
+format = "$character$directory$git_branch$git_status$cmd_duration"
 
 [character]
 format = "$symbol  "
@@ -36,26 +36,6 @@ stashed = "≡"
 ahead = "⇡${count}"
 behind = "⇣${count}"
 diverged = "⇕"
-
-# Your only context is a remote GKE cluster, so this is a safety rail, not
-# decoration -- it tells you what you are about to apply against.
-# The raw name is gke_<proj>_<region>_<cluster>; collapse it to gke/<cluster>.
-[kubernetes]
-disabled = false
-format = '[k8s:($context)]($style) '
-style = "bold red"
-
-[[kubernetes.contexts]]
-context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
-context_alias = "gke/$cluster"
-
-[[kubernetes.contexts]]
-context_pattern = "docker-desktop|minikube|kind-.*|orbstack"
-style = "dimmed green"
-
-[gcloud]
-format = '[gcp:($project)]($style) '
-style = "bold yellow"
 
 [cmd_duration]
 min_time = 2000
